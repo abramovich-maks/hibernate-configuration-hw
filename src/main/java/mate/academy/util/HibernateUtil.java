@@ -10,11 +10,7 @@ public class HibernateUtil {
     }
 
     private static SessionFactory initSessionFactory() {
-        return new Configuration().configure()
-                .setProperty("hibernate.connection.url", System.getenv("DB_URL"))
-                .setProperty("hibernate.connection.username", System.getenv("DB_USERNAME"))
-                .setProperty("hibernate.connection.password", System.getenv("DB_PASSWORD"))
-                .buildSessionFactory();
+        return new Configuration().configure().buildSessionFactory();
     }
 
     public static SessionFactory getSessionFactory() {
